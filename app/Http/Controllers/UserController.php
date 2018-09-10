@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use User;
 
 class UserController extends Controller
 {
@@ -45,7 +46,18 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $statusCode = 200;
+
+            $user = User::find($id);
+            if (empty($user)) {
+                $statusCode = 404;
+            }
+        } catch (Exception $exception) {
+            $statusCode = 500;
+        }
+
+        return response()->json($user, $statusCode);
     }
 
     /**
