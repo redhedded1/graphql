@@ -22,4 +22,4 @@ Route::get('/home/users', 'UserController@index');
 Route::get('/users/{id}', 'UserController@show');
 
 Route::get('/home/companies', 'CompanyController@index');
-Route::get('/company/{id}', 'CompanyController@show');
+Route::get('/companies/{id}', 'CompanyController@show');
