@@ -1,8 +1,10 @@
-type Article {
+type Company {
     id: ID!
-    title: String!
-    body: String!
-    author: User!
+    name: String!
+    address: String!
+    website: String!
+    email: String!
+    contact: User!
 }
 
 type User {
@@ -12,5 +14,5 @@ type User {
 }
 
 type Query {
-    articles: [Article]! @paginate(model: "Article", type: "connection")
+    companies: [Company]! @paginate(model: "Company", type: "connection")
 }
