@@ -32,17 +32,27 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function jobs()
-    {
-        return $this->hasMany(Job::class);
-    }
+//    public function jobs()
+//    {
+//        return $this->hasMany(Job::class);
+//    }
     /**
      * Tasks assigned to user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function tasks()
+//    public function tasks()
+//    {
+//        return $this->belongsToMany(Task::class)->withTimestamps();
+//    }
+
+    /**
+     * The user's company.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function company()
     {
-        return $this->belongsToMany(Task::class)->withTimestamps();
+        return $this->belongsTo(Company::class);
     }
 }

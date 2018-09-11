@@ -1,0 +1,7 @@
+type Job {
+  title: String!
+}
+
+type Query {
+  jobs: [Job!]! @field(resolver: "App\\Http\\GraphQL\\Query@jobs")
+}
