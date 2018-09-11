@@ -14,7 +14,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $statusCode = 200;
+
+            $users = User::all();
+            if (empty($users)) {
+                $statusCode = 404;
+            }
+        } catch (Exception $exception) {
+            $statusCode = 500;
+        }
+
+        return response()->json($user, $statusCode);
+
     }
 
     /**
