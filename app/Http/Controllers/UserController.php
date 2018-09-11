@@ -25,7 +25,7 @@ class UserController extends Controller
             $statusCode = 500;
         }
 
-        return response()->json($user, $statusCode);
+        return response()->json($users, $statusCode);
 
     }
 

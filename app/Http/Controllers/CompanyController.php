@@ -17,15 +17,15 @@ class CompanyController extends Controller
         try {
             $statusCode = 200;
 
-            $users = Company::all();
-            if (empty($users)) {
+            $companies = Company::all();
+            if (empty($companies)) {
                 $statusCode = 404;
             }
         } catch (Exception $exception) {
             $statusCode = 500;
         }
 
-        return response()->json($user, $statusCode);
+        return response()->json($companies, $statusCode);
 
     }
 
@@ -61,15 +61,15 @@ class CompanyController extends Controller
         try {
             $statusCode = 200;
 
-            $user = User::find($id);
-            if (empty($user)) {
+            $company = Company::find($id);
+            if (empty($company)) {
                 $statusCode = 404;
             }
         } catch (Exception $exception) {
             $statusCode = 500;
         }
 
-        return response()->json($user, $statusCode);
+        return response()->json($company, $statusCode);
     }
 
     /**
